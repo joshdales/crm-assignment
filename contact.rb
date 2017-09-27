@@ -1,5 +1,6 @@
 class Contact
   @@contact_list = []
+  @@deleted_contact = []
   @@id = 1
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name, email, note = 'none')
@@ -100,7 +101,11 @@ class Contact
 
   # This method should delete all of the contacts
   def self.delete_all
-
+    puts "Are you sure? if so type 'yes'"
+    are_you_sure = gets.chomp
+    if are_you_sure == "yes"
+      @@contact_list = []
+    end
   end
 
   def full_name
