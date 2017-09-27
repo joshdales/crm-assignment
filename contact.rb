@@ -1,11 +1,14 @@
 class Contact
   @@contact_list = []
+  @@id = 1
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name, email, note = 'none')
     @first_name = first_name
     @last_name = last_name
     @email = email
     @note = note
+    @id = @@idea
+    @@idea += 1
   end
 
   # This method should call the initializer,
@@ -36,6 +39,10 @@ class Contact
 
   def note
     @note
+  end
+
+  def id
+    @id
   end
 
   # Writers
@@ -83,7 +90,7 @@ class Contact
   end
 
   def full_name
-
+    "#{@first_name} #{@last_name}"
   end
 
   # This method should delete the contact
