@@ -1,5 +1,5 @@
 class Contact
-  @@contact_list
+  @@contact_list = []
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name, email, note = 'none')
     @first_name = first_name
@@ -18,7 +18,41 @@ class Contact
 
   # This method should return all of the existing contacts
   def self.all
+    @@contact_list
+  end
 
+  # Readers
+  def first_name
+    @first_name
+  end
+
+  def last_name
+    @last_name
+  end
+
+  def email
+    @email
+  end
+
+  def note
+    @note
+  end
+
+  # Writers
+  def first_name=(first_name)
+    @first_name = first_name
+  end
+
+  def last_name=(last_name)
+    @last_name = last_name
+  end
+
+  def email=(email)
+    @email = email
+  end
+
+  def note=(note)
+    @note = "#{@note} #{note}"
   end
 
   # This method should accept an id as an argument
