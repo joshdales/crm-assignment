@@ -67,7 +67,7 @@ class Contact
   def self.find(id)
     @@contact_list.each do |contact|
       if contact.id == id
-        return "Name: #{contact.full_name} \nEmail: #{contact.email} \nNotes: #{contact.note} \nid: #{contact.id}"
+        puts "Name: #{contact.full_name} \nEmail: #{contact.email} \nNotes: #{contact.note} \nid: #{contact.id}"
       end
     end
   end
@@ -93,7 +93,7 @@ class Contact
   def self.find_by(user_value)
     @@contact_list.each do |contact|
       if contact.id == user_value || contact.first_name == user_value || contact.last_name == user_value || contact.email == user_value || contact.full_name == user_value
-        return "Name: #{contact.full_name} \nEmail: #{contact.email} \nNotes: #{contact.note} \nid: #{contact.id}"
+        puts "Name: #{contact.full_name} \nEmail: #{contact.email} \nNotes: #{contact.note} \nid: #{contact.id}"
       end
     end
   end
@@ -114,7 +114,11 @@ class Contact
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-    @@contact_list.delete(self)
+    puts "Are you sure? if so type 'yes'"
+    are_you_sure = gets.chomp
+    if are_you_sure == "yes"
+      @@contact_list.delete(self)
+    end
   end
 
   # Feel free to add other methods here, if you need them.
