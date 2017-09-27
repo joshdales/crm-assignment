@@ -1,6 +1,5 @@
 class Contact
   @@contact_list = []
-  @@deleted_contact = []
   @@id = 1
   # This method should initialize the contact's attributes
   def initialize(first_name, last_name, email, note = 'none')
@@ -115,7 +114,7 @@ class Contact
   # This method should delete the contact
   # HINT: Check the Array class docs for built-in methods that might be useful here
   def delete
-
+    @@contact_list.delete(self)
   end
 
   # Feel free to add other methods here, if you need them.
