@@ -7,8 +7,8 @@ class Contact
     @last_name = last_name
     @email = email
     @note = note
-    @id = @@idea
-    @@idea += 1
+    @id = @@id
+    @@id += 1
   end
 
   # This method should call the initializer,
@@ -64,8 +64,12 @@ class Contact
 
   # This method should accept an id as an argument
   # and return the contact who has that id
-  def self.find
-
+  def self.find(id)
+    @@contact_list.each do |contact|
+      if contact.id == id
+        return "Name: #{contact.full_name}\nEmail: #{contact.email}\nNote: #{contact.note}\nid: #{@id}"
+      end
+    end
   end
 
   # This method should allow you to specify
