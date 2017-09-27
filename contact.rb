@@ -65,11 +65,13 @@ class Contact
   # This method should accept an id as an argument
   # and return the contact who has that id
   def self.find(id)
+    matched_contact = nil
     @@contact_list.each do |contact|
       if contact.id == id
-        puts "Name: #{contact.full_name} \nEmail: #{contact.email} \nNotes: #{contact.note} \nid: #{contact.id}"
+        matched_contact = contact
       end
     end
+    matched_contact
   end
 
   # This method should allow you to specify
