@@ -2,8 +2,8 @@ require "./contact.rb"
 
 class CRM
 
-  def initialize(name)
-    @name = name
+  def initialize
+
   end
 
   def main_menu
@@ -90,5 +90,5 @@ class CRM
 
 end
 
-a_crm_app = CRM.new("josh")
+a_crm_app = CRM.new
 a_crm_app.main_menu
